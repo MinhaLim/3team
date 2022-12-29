@@ -6,8 +6,8 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 	<insert id="insert" parameterType="Cart">
 		INSERT INTO cart VALUES (cart_code, #{user_code}, #{item_code}, #{cnt})
 	</insert>
-	<update id="update" parameterType="Address">
-		UPDATE cart SET cnt={#cnt} WHERE cart_code=#{cart_code}
+	<update id="update" parameterType="Cart">
+		UPDATE cart SET cnt=#{cnt} WHERE cart_code=#{cart_code}
 	</update>
 	<delete id="delete" parameterType="Integer">
 		DELETE FROM cart WHERE cart_code=#{cart_code}
