@@ -3,11 +3,12 @@ package com.sampleshop.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.sampleshop.dto.OrderDetail;
 import com.sampleshop.frame.MyService;
 import com.sampleshop.mapper.OrderDetailMapper;
-
+@Service
 public class OrderDetailService implements MyService<Integer, OrderDetail>{
 
 	@Autowired
