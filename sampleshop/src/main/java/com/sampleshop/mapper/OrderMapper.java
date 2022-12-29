@@ -9,5 +9,6 @@ import com.sampleshop.frame.MyMapper;
 @Repository
 @Mapper
 public interface OrderMapper extends MyMapper<Integer, Order> {
-
+	// 주문 총 가격 update
+	public void tot_price(Order v) throws Exception;
 }

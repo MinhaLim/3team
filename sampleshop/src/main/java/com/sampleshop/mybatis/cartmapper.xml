@@ -18,4 +18,18 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 	<select id="selectall" resultType="Cart">
 		SELECT * FROM cart
 	</select>
+	
+	<select id="cartcheck" parameterType="Integer" resultType="Cart">
+		SELECT ca.cart_code AS cart_code, us.userid userid, it.name item_name, ca.cnt cnt, (ca.cnt * it.price) amount
+		FROM cart ca
+		INNER JOIN user us ON us.user_code = ca.user_code
+		INNER JOIN item it ON it.item_code = ca.item_code
+		WHERE ca.user_code=#{ca.user_code}
+	</select>
+	<select id="cartcheckall" resultType="Cart">
+		SELECT ca.cart_code cart_code, us.userid userid, it.name item_name, ca.cnt cnt, (ca.cnt * it.price) amount
+		FROM cart ca
+		INNER JOIN user us ON us.user_code = ca.user_code
+		INNER JOIN item it ON it.item_code = ca.item_code
+	</select>
 </mapper>

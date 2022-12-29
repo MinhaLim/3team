@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sampleshop.mapper.ReviewAvgMapper">
+	<select id="getSavg" parameterType="Integer" resultType="ReviewAvg">
+	SELECT item_code, round(avg(score),1) AS rev_avg FROM review WHERE item_code =#{item_code} GROUP BY item_code
+	</select>
+	<select id="getAllSavg" resultType="ReviewAvg">
+	SELECT item_code, round(avg(score),1) rev_avg FROM review GROUP BY item_code
+	</select>
+</mapper>

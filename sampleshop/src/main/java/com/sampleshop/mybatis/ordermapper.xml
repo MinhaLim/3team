@@ -19,4 +19,7 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 	<select id="selectall" resultType="Order">
 		SELECT * FROM `order`
 	</select>
+	<update id="tot_price" parameterType="Order">
+		UPDATE `order` SET tot_price=#{tot_price} WHERE order_code=#{order_code}
+	</update>
 </mapper>

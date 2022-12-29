@@ -19,4 +19,10 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 	<select id="selectall" resultType="OrderDetail">
 		SELECT * FROM order_detail
 	</select>
+	<select id="tot_price" parameterType="Order" resultType="Order">
+		SELECT ord.order_code, sum(it.price*det.cnt) tot_price FROM order_detail det
+		INNER JOIN `order` ord ON ord.order_code=det.order_code
+		INNER JOIN item it ON it.item_code=det.item_code
+		WHERE ord.order_code=#{order_code};
+	</select>
 </mapper>

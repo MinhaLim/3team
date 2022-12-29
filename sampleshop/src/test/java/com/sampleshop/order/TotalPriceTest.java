@@ -8,20 +8,22 @@ import com.sampleshop.dto.Order;
 import com.sampleshop.service.OrderService;
 
 @SpringBootTest
-class InsertTests {
+class TotalPriceTest {
 
 	@Autowired
 	OrderService service;
 	
 	@Test
 	void contextLoads() {
-		Order order = new Order(0, 4, 0,"card", null, 4);
+		Order order = new Order();
+		order.setOrder_code(1);
 		try {
-			service.register(order);
+			service.tot_price(order);
 			System.out.println("ok");
+			service.get(1);
 		} catch (Exception e) {
 			System.out.println("fail");
-//			e.printStackTrace();
+			e.printStackTrace();
 		}
 	}
 

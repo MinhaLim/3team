@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.sampleshop.dto.Order;
 import com.sampleshop.dto.OrderDetail;
 import com.sampleshop.frame.MyService;
 import com.sampleshop.mapper.OrderDetailMapper;
@@ -40,6 +41,11 @@ public class OrderDetailService implements MyService<Integer, OrderDetail>{
 	@Override
 	public List<OrderDetail> get() throws Exception {
 		return mapper.selectall();
+	}
+	
+	// 주문 총 가격 select
+	public Order tot_price(Order v) throws Exception {
+		return mapper.tot_price(v);
 	}
 
 }

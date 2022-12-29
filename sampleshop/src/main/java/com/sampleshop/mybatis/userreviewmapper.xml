@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sampleshop.mapper.UserReviewMapper">
+	<select id="reviewchk" parameterType="Integer" resultType="UserReview">
+		SELECT us.userid userid, us.name username,
+		it.name itemname, re.score score, re.title title, re.content content
+		FROM review re
+		INNER JOIN user us ON re.user_code = us.user_code
+		INNER JOIN item it ON it.item_code = re.item_code
+		WHERE re.user_code=2
+	</select>
+	<select id="reviewchkall" resultType="UserReview">
+		SELECT us.userid userid, us.name username,
+		it.name itemname, re.score score, re.title title, re.content content
+		FROM review re
+		INNER JOIN user us ON re.user_code = us.user_code
+		INNER JOIN item it ON it.item_code = re.item_code
+	</select>
+</mapper>
