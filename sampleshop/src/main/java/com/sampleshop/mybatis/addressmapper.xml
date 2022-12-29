@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sampleshop.mapper.AddressMapper">
+	<insert id="insert" parameterType="Address">
+		INSERT INTO address VALUES(address_code, #{zipcode}, #{province}, #{city}, #{street}, #{detailaddr})
+	</insert>
+	<update id="update" parameterType="Address">
+		UPDATE address SET zipcode=#{zipcode}, province=#{province}, city=#{city}, street=#{street}, detailaddr=#{detailaddr} WHERE addr_code=#{addr_code}
+	</update>
+	<delete id="delete" parameterType="Integer">
+		DELETE FROM address WHERE addr_code=#{addr_code}
+	</delete>
+	<select id="select" parameterType="Integer" resultType="Address">
+		SELECT * FROM address WHERE addr_code=#{addr_code}
+	</select>
+	<select id="selectall" resultType="Address">
+		SELECT * FROM address
+	</select>
+</mapper>
