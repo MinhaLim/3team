@@ -21,7 +21,7 @@ class InsertTests {
 			System.out.println("ok");
 		} catch (Exception e) {
 			System.out.println("fail");
-			//e.printStackTrace();
+//			e.printStackTrace();
 		}
 	}
 
