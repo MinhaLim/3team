@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sampleshop.mapper.CartMapper">
+	<insert id="insert" parameterType="Cart">
+		INSERT INTO cart VALUES (cart_code, #{user_code}, #{item_code}, #{cnt})
+	</insert>
+	<update id="update" parameterType="Address">
+		UPDATE cart SET cnt={#cnt} WHERE cart_code=#{cart_code}
+	</update>
+	<delete id="delete" parameterType="Integer">
+		DELETE FROM cart WHERE cart_code=#{cart_code}
+	</delete>
+	<select id="select" parameterType="Integer" resultType="Cart">
+		SELECT * FROM cart WHERE cart_code=#{cart_code}
+	</select>
+	<select id="selectall" resultType="Cart">
+		SELECT * FROM cart
+	</select>
+</mapper>

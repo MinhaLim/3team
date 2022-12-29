@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sampleshop.mapper.ReviewMapper">
+	<insert id="insert" parameterType="Review">
+		INSERT INTO review VALUES(rev_code, #{item_code}, #{user_code}, #{score}, #{title}, #{content}, NOW())
+	</insert>
+	<update id="update" parameterType="Review">
+		UPDATE category SET score=#{score}, title=#{title}, content=#{content}, WHERE rev_code=#{rev_code}
+	</update>
+	<delete id="delete" parameterType="Integer">
+		DELETE FROM category WHERE rev_code=#{rev_code}
+	</delete>
+	<select id="select" parameterType="Integer" resultType="Review">
+		SELECT * FROM category WHERE rev_code=#{rev_code}
+	</select>
+	<select id="selectall" resultType="Review">
+		SELECT * FROM review
+	</select>
+</mapper>
