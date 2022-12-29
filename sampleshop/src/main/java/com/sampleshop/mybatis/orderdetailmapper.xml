@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sampleshop.mapper.OrderDetailMapper">
+
+	<insert id="insert" parameterType="OrderDetail">
+		INSERT INTO order_detail VALUES (detail_code, #{order_code}, #{item_code}, #{cnt})
+	</insert>
+	<delete id="delete" parameterType="Integer">
+		DELETE FROM order_detail WHERE detail_code=#{detail_code}
+	</delete>
+	<update id="update" parameterType="OrderDetail">
+		UPDATE order_detail SET cnt=#{cnt} WHERE detail_code=#{detail_code}
+	</update>
+	<select id="select" parameterType="Integer" resultType="OrderDetail">
+		SELECT * FROM order_detail WHERE detail_code=#{detail_code}
+	</select>
+	<select id="selectall" resultType="OrderDetail">
+		SELECT * FROM order_detail
+	</select>
+</mapper>

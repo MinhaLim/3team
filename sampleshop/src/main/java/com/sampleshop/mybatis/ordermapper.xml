@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sampleshop.mapper.OrderMapper">
+	
+	<insert id="insert" parameterType="Order">
+		INSERT INTO `order` VALUES (order_code, #{user_code}, #{tot_price}, #{payment}, SYSDATE(), #{addr_code})
+	</insert>
+	<delete id="delete" parameterType="Integer">
+		DELETE FROM `order` WHERE order_code=#{order_code}
+	</delete>
+	<update id="update" parameterType="Order">
+		UPDATE `order` SET user_code=#{user_code}, tot_price=#{tot_price}, payment=#{payment}, addr_code=#{addr_code} WHERE order_code=#{order_code}
+	</update>
+	<select id="select" parameterType="Integer" resultType="Order">
+		SELECT * FROM `order` WHERE order_code=#{order_code}
+	</select>
+	<select id="selectall" resultType="Order">
+		SELECT * FROM `order`
+	</select>
+</mapper>
