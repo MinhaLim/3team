@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.sampleshop.dto.Item;
 import com.sampleshop.dto.Review;
 import com.sampleshop.frame.MyService;
 import com.sampleshop.mapper.ReviewMapper;
@@ -43,4 +44,7 @@ public class ReviewService implements MyService<Integer, Review> {
 		return mapper.selectall();
 	}
 	
+	public List<Item> itembyreview(int score) throws Exception {
+		return mapper.itembyreview(score);
+	}
 }

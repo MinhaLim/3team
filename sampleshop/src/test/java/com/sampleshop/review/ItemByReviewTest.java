@@ -1,4 +1,4 @@
-package com.sampleshop.itembycate;
+package com.sampleshop.review;
 
 import java.util.List;
 
@@ -7,18 +7,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.sampleshop.dto.Item;
-import com.sampleshop.service.ItemByCateService;
+import com.sampleshop.dto.Review;
+import com.sampleshop.service.ReviewService;
 
 @SpringBootTest
-class SelectTest {
+class ItemByReviewTest {
 	
 	@Autowired
-	ItemByCateService service;
+	ReviewService service;
 	
 	@Test
 	void contextLoads() {
+		List<Item> objs = null;
 		try {
-			List<Item> objs = service.getsItem(5);
+			objs = service.itembyreview(4);
 			for(Item obj:objs) {
 				System.out.println(obj);
 			}
@@ -27,7 +29,5 @@ class SelectTest {
 			System.out.println("Fail");
 			e.printStackTrace();
 		}
-		
 	}
-
 }

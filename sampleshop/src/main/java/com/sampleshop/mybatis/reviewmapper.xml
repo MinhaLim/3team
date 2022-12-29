@@ -18,4 +18,9 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 	<select id="selectall" resultType="Review">
 		SELECT * FROM review
 	</select>
+	<select id="itembyreview" parameterType="Integer" resultType="Item">
+		SELECT item_code, round(avg(score),1) AS rev_avg FROM review
+		group by item_code
+		having rev_avg <![CDATA[>=]]> #{score} and rev_avg <![CDATA[<]]> #{score}+1
+	</select>
 </mapper>

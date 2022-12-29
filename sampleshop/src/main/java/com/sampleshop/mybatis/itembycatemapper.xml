@@ -3,7 +3,7 @@
 PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.sampleshop.mapper.ItemByCateMapper">
-	<select id="select" parameterType="Integer" resultType="Item">
+	<select id="getsItem" parameterType="Integer" resultType="Item">
 		SELECT * FROM item WHERE cate_code=#{cate_code}
 	</select>
 </mapper>
