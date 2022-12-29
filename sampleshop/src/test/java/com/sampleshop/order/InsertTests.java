@@ -8,7 +8,7 @@ import com.sampleshop.dto.Order;
 import com.sampleshop.service.OrderService;
 
 @SpringBootTest
-class InserTests {
+class InsertTests {
 
 	@Autowired
 	OrderService service;

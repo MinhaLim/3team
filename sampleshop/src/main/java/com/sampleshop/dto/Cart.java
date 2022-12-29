@@ -17,4 +17,11 @@ public class Cart {
 	private int user_code;
 	private int item_code;
 	private int cnt;
+	
+	public Cart(int cart_code, int cnt) {
+		super();
+		this.cart_code = cart_code;
+		this.cnt = cnt;
+	}
+	
 }

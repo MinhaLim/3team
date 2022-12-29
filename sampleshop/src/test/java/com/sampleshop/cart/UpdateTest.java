@@ -15,7 +15,7 @@ class UpdateTest {
 	
 	@Test
 	void contextLoads() {
-		Cart cart = new Cart(4, 2, 2, 3);
+		Cart cart = new Cart(4, 3);
 		try {
 			service.modify(cart);
 			System.out.println("OK");

@@ -8,14 +8,14 @@ import com.sampleshop.dto.OrderDetail;
 import com.sampleshop.service.OrderDetailService;
 
 @SpringBootTest
-class InserTests {
+class InsertTests {
 
 	@Autowired
 	OrderDetailService service;
 	
 	@Test
 	void contextLoads() {
-		OrderDetail orderdetail = new OrderDetail(4, 4, 4, 4);
+		OrderDetail orderdetail = new OrderDetail(4, 5, 4, 4);
 		try {
 			service.register(orderdetail);
 			System.out.println("ok");

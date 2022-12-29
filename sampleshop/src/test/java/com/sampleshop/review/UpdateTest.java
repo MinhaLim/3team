@@ -15,7 +15,7 @@ class UpdateTest {
 	
 	@Test
 	void contextLoads() {
-		Review review = new Review(2, 3, 2, 5, "좋습니다", "", null);
+		Review review = new Review(2, 2, 4, "좋습니다", null);
 		try {
 			service.modify(review);
 			System.out.println("OK");

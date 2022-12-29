@@ -4,7 +4,7 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.sampleshop.mapper.CategoryMapper">
 	<insert id="insert" parameterType="Category">
-		INSERT INTO category VALUES(cate_code, name=#{name}, up_cate_code=#{up_cate_code})
+		INSERT INTO category VALUES(cate_code, #{name}, #{up_cate_code})
 	</insert>
 	<update id="update" parameterType="Category">
 		UPDATE category SET name=#{name}, up_cate_code=#{up_cate_code} WHERE cate_code=#{cate_code}

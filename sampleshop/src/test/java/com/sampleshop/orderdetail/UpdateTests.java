@@ -15,7 +15,7 @@ class UpdateTests {
 	
 	@Test
 	void contextLoads() {
-		OrderDetail orderdetail = new OrderDetail(4, 4, 4, 4);
+		OrderDetail orderdetail = new OrderDetail(4, 5, 4, 3);
 		try {
 			service.modify(orderdetail);
 			System.out.println("ok");
