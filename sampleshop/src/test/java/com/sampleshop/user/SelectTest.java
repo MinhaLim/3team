@@ -8,16 +8,16 @@ import com.sampleshop.dto.User;
 import com.sampleshop.service.UserService;
 
 @SpringBootTest
-class InsertTest {
+class SelectTest {
 	
 	@Autowired
 	UserService service;
 	
 	@Test
 	void contextLoads() {
-		User user = new User(0, "user04", "pwd04", "david", "010-1111-1111", "david@yahoo.co.kr", 3);
 		try {
-			service.register(user);
+			User obj = service.get(3);
+			System.out.println(obj);
 			System.out.println("OK");
 		} catch (Exception e) {
 			System.out.println("Fail");

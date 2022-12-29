@@ -1,29 +1,28 @@
-package com.sampleshop.user;
+package com.sampleshop.address;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.sampleshop.dto.User;
-import com.sampleshop.service.UserService;
+import com.sampleshop.dto.Address;
+import com.sampleshop.service.AddressService;
 
 @SpringBootTest
-class InsertTest {
+class UpdateTest {
 	
 	@Autowired
-	UserService service;
+	AddressService service;
 	
 	@Test
 	void contextLoads() {
-		User user = new User(0, "user04", "pwd04", "david", "010-1111-1111", "david@yahoo.co.kr", 3);
+		Address addr = new Address(2, "67890", "부산시", "괴정구", "대티로", null);
 		try {
-			service.register(user);
+			service.modify(addr);
 			System.out.println("OK");
 		} catch (Exception e) {
 			System.out.println("Fail");
 			e.printStackTrace();
 		}
-		
 	}
 
 }
