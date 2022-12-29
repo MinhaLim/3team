@@ -1,27 +1,29 @@
-package com.sampleshop.orderdetail;
+package com.sampleshop.order;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.sampleshop.dto.OrderDetail;
-import com.sampleshop.service.OrderDetailService;
+import com.sampleshop.dto.Order;
+import com.sampleshop.service.OrderService;
 
 @SpringBootTest
-class UpdateTests {
+class TotalPriceTest {
 
 	@Autowired
-	OrderDetailService service;
+	OrderService service;
 	
 	@Test
 	void contextLoads() {
-		OrderDetail orderdetail = new OrderDetail(2, 1, 2, 2);
+		Order order = new Order();
+		order.setOrder_code(1);
 		try {
-			service.modify(orderdetail);
+			service.tot_price(order);
 			System.out.println("ok");
+			service.get(1);
 		} catch (Exception e) {
 			System.out.println("fail");
-			//e.printStackTrace();
+			e.printStackTrace();
 		}
 	}
 
