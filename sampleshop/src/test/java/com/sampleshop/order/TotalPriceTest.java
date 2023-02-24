@@ -19,8 +19,8 @@ class TotalPriceTest {
 		order.setOrder_code(1);
 		try {
 			service.tot_price(order);
+			System.out.println(service.get(1));
 			System.out.println("ok");
-			service.get(1);
 		} catch (Exception e) {
 			System.out.println("fail");
 			e.printStackTrace();
